@@ -1,5 +1,8 @@
 from .settings import *
 
+
+AES_KEY = '1Q2w3e4r%'
+
 DATABASES = {
     'default': {
         'NAME': 'quality',

@@ -5,11 +5,6 @@ import hashlib
 from Crypto.Cipher import AES as _AES
 
 
-config = configparser.RawConfigParser()
-config.read('./apps/za_tools/plugins/aes_cipher/config.ini', 'utf-8')
-# config.read('./config.ini', 'utf-8')
-
-
 class AES:
     def __init__(self, key: str):
         """
@@ -112,13 +107,10 @@ class AES:
         return content_str
 
 
-key = config.get('AES', 'key')
-aes = AES(key)
-
-
 if __name__ == '__main__':
     key = '1Q2w3e4r%'
-    content = 'genesis'
+    aes = AES(key)
+    content = 'c82b0c67ef1e3032bef5975dfe229fb4'
     result = aes.get_encrypt_cipher_text(content)
     print(result)
     co = aes.get_decrypt_cipher_text(result)
