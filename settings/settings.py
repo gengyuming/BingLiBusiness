@@ -15,9 +15,6 @@ import sys
 
 from pathlib import Path
 
-# from za_tools.base.base import RequestLogFilter
-# from za_tools.base.base import RequestLogMiddleware
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -50,11 +47,9 @@ DJANGO_APPS = [
 ]
 # Put custom Applications in LOCAL_APPS
 LOCAL_APPS = [
-    'za_heimdall',
-    'apps.za_tools',
-    'apps.report',
-    'apps.performance',
-    'apps.demo',
+    'apps.BingLiBusiness',
+    'apps.base',
+    'apps.finance'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
@@ -71,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'toolbar.middleware.request_middleware.RequestMiddleware',
+    'core.middleware.RequestMiddleware',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -102,7 +97,7 @@ CORS_ALLOW_HEADERS = (
     'Pragma',
 )
 
-ROOT_URLCONF = 'za_heimdall.urls'
+ROOT_URLCONF = 'BingLiBusiness.urls'
 
 TEMPLATES = [
     {
@@ -121,7 +116,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'za_heimdall.wsgi.application'
+WSGI_APPLICATION = 'BingLiBusiness.wsgi.application'
 
 SILENCED_SYSTEM_CHECKS = ['mysql.E001']
 
@@ -218,7 +213,7 @@ LOGGING = {
             # 指定文件大小，50Mb
             'maxBytes': 50 * 1024 * 1024,
             # 文件地址
-            'filename': os.path.join(BASE_DIR, 'logs', 'za_tools.log'),
+            'filename': os.path.join(BASE_DIR, 'logs', 'loggers.log'),
             # 指定保存格式，对应formatters中配置
             'formatter': 'verbose'
         },

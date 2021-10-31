@@ -1,7 +1,7 @@
 from django.http.response import JsonResponse
 from rest_framework import status as response_status
 
-from base import response_code
+from core import response_code
 
 
 class BaseResponse(JsonResponse):
