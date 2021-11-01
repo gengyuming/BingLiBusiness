@@ -48,7 +48,7 @@ DJANGO_APPS = [
 # Put custom Applications in LOCAL_APPS
 LOCAL_APPS = [
     'apps.BingLiBusiness',
-    'apps.base',
+    'apps.main',
     'apps.finance'
 ]
 
@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'core.middleware.RequestMiddleware',
+    'base.middleware.RequestMiddleware',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
